@@ -1,15 +1,16 @@
 import React from 'react';
 import { solveOperation } from '../helpers';
 
-const Symbol = ({ val, setOperation }) => {
+const Equal = ({ val, operation, setOperation, setResult }) => {
     
-    function write() {
+    function processOperation() {
         setOperation(data => data + val);
+        solveOperation(operation);
     }
     
     return (
         <div
-            onClick={write}
+            onClick={processOperation}
             className="btn"
         >
             <span>{val}</span>
@@ -17,4 +18,4 @@ const Symbol = ({ val, setOperation }) => {
     );
 }
 
-export default Symbol;
+export default Equal;

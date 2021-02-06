@@ -3,10 +3,11 @@ import Num from './components/Num';
 import Symbol from './components/Symbol';
 import Reset from './components/Reset';
 import Result from './components/Result';
+import Equal from './components/Equal';
 
 const WcalcApp = () => {
 
-  const [operation, setOperation] = useState("0");
+  const [operation, setOperation] = useState("");
   const [result, setResult] = useState("");
 
   return (
@@ -95,8 +96,10 @@ const WcalcApp = () => {
               setOperation={setOperation}
               val="."
             />
-            <Symbol
+            <Equal
+              operation={operation}
               setOperation={setOperation}
+              setResult={setResult}
               val="="
             />
           </div>
