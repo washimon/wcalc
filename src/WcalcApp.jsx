@@ -18,6 +18,7 @@ const WcalcApp = () => {
             <Result
               operation={operation}
               setOperation={setOperation}
+              result={result}
             />
           </div>
           <div className="row">
@@ -26,7 +27,7 @@ const WcalcApp = () => {
             />
             <Symbol
               setOperation={setOperation}
-              val="%"
+              val="undo"
             />
             <Symbol
               setOperation={setOperation}

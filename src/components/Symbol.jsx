@@ -1,18 +1,29 @@
 import React from 'react';
-import { solveOperation } from '../helpers';
 
 const Symbol = ({ val, setOperation }) => {
-    
-    function write() {
-        setOperation(data => data + val);
+
+    let icon;
+    if (val === 'undo') {
+        icon = <i className="fas fa-undo"></i>;
     }
-    
+    function write() {
+        val !== 'undo' 
+            ? setOperation(data => data + val)
+            : setOperation(data => {
+                return data.length === 0
+                    ? data
+                    : data.substring(0, data.length - 1);
+            });
+    }
+
     return (
         <div
             onClick={write}
             className="btn"
-        >
-            <span>{val}</span>
+        >   
+            {!icon
+            ? <span>{val}</span>
+            : <span>{icon}</span>}
         </div>
     );
 }

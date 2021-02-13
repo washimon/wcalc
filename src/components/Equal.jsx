@@ -1,11 +1,18 @@
 import React from 'react';
-import { solveOperation } from '../helpers';
+import { solveOperation, isNotValid } from '../helpers';
 
 const Equal = ({ val, operation, setOperation, setResult }) => {
     
     function processOperation() {
+        if (isNotValid(operation)) {
+            console.log('incorrecto');
+            return;
+        }
+        const prevOper = operation;
         setOperation(data => data + val);
-        solveOperation(operation);
+        const res = solveOperation(operation);
+        setOperation(String(res));
+        setResult(prevOper.concat("=", String(res)));
     }
     
     return (
