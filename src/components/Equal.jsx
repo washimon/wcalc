@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { solveOperation, isNotValid } from '../helpers';
 
 const Equal = ({ val, operation, setOperation, setResult }) => {
     
     function processOperation() {
         if (isNotValid(operation)) {
-            console.log('incorrecto');
+            // console.log('incorrecto');
             return;
         }
         const prevOper = operation;
@@ -23,6 +24,13 @@ const Equal = ({ val, operation, setOperation, setResult }) => {
             <span>{val}</span>
         </div>
     );
+}
+
+Equal.propTypes = {
+    val: PropTypes.string.isRequired,
+    operation: PropTypes.string.isRequired,
+    setOperation: PropTypes.func.isRequired,
+    setResult: PropTypes.func.isRequired
 }
 
 export default Equal;

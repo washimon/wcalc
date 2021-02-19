@@ -2,13 +2,13 @@
 export function solveOperation(oper) {
     let charsValidated = getCharsValidated(oper);
 
-    if (charsValidated.includes('*') || charsValidated.includes('/')) {
+    if (charsValidated.includes('x') || charsValidated.includes('/')) {
 
-        while (charsValidated.includes('*') || charsValidated.includes('/')) {
+        while (charsValidated.includes('x') || charsValidated.includes('/')) {
             let solved = false;
             let index;
             charsValidated = charsValidated.map((item, i) => {
-                if (item === '*' && !solved) {
+                if (item === 'x' && !solved) {
                     index = i;
                     solved = true;
                     // console.log(item[i - 1], item[i + 1]);

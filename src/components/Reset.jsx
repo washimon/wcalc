@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Reset = ({ setOperation }) => {
     return (
@@ -9,6 +10,10 @@ const Reset = ({ setOperation }) => {
             <span>C</span>
         </div>
     );
+}
+
+Reset.propTypes = {
+    setOperation: PropTypes.func.isRequired
 }
 
 export default Reset;

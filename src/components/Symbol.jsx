@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Symbol = ({ val, setOperation }) => {
 
@@ -26,6 +27,11 @@ const Symbol = ({ val, setOperation }) => {
             : <span>{icon}</span>}
         </div>
     );
+}
+
+Symbol.propTypes = {
+    val: PropTypes.string.isRequired,
+    setOperation: PropTypes.func.isRequired
 }
 
 export default Symbol;

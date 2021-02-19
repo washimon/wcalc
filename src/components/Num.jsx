@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Num = ({ val, setOperation }) => {
 
@@ -19,6 +20,11 @@ const Num = ({ val, setOperation }) => {
             <span>{val}</span>
         </div>
     );
+}
+
+Num.propTypes = {
+    val: PropTypes.string.isRequired,
+    setOperation: PropTypes.func.isRequired
 }
 
 export default Num;
